@@ -1,19 +1,19 @@
-package org.springframework.social.pcloud.api.impl;
+package org.springframework.social.dropbox.api.impl;
 
+import org.springframework.social.dropbox.api.Dropbox;
+import org.springframework.social.dropbox.api.UserOperations;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
-import org.springframework.social.pcloud.api.PCloud;
-import org.springframework.social.pcloud.api.UserOperations;
 import org.springframework.social.support.ClientHttpRequestFactorySelector;
 
-public class PCloudTemplate extends AbstractOAuth2ApiBinding implements PCloud{
+public class DropboxTemplate extends AbstractOAuth2ApiBinding implements Dropbox{
 
 	private UserOperations userOperations;
 	
-	public PCloudTemplate() {
+	public DropboxTemplate() {
 		initialize();
 	}
 
-	public PCloudTemplate(String accessToken) {
+	public DropboxTemplate(String accessToken) {
 		super(accessToken);
 		initialize();
 	}

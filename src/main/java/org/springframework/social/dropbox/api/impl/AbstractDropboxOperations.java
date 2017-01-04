@@ -1,4 +1,4 @@
-package org.springframework.social.pcloud.api.impl;
+package org.springframework.social.dropbox.api.impl;
 
 import java.net.URI;
 
@@ -6,16 +6,16 @@ import org.springframework.social.MissingAuthorizationException;
 import org.springframework.social.support.URIBuilder;
 import org.springframework.util.MultiValueMap;
 
-public class AbstractPCloudOperations {
+public class AbstractDropboxOperations {
 	private final boolean isAuthorized;
 
-	public AbstractPCloudOperations(boolean isAuthorized) {
+	public AbstractDropboxOperations(boolean isAuthorized) {
 		this.isAuthorized = isAuthorized;
 	}
 
 	protected void requireAuthorization() {
 		if (!isAuthorized) {
-			throw new MissingAuthorizationException("live");
+			throw new MissingAuthorizationException("dropbox");
 		}
 	}
 
@@ -38,5 +38,5 @@ public class AbstractPCloudOperations {
 	/**
 	 * Base URL Live API's
 	 */
-	private static final String API_URL_BASE = "https://api.pcloud.com/";
+	private static final String API_URL_BASE = "https://api.dropboxapi.com/2/";
 }
