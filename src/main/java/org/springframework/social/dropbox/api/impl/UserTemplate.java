@@ -1,15 +1,11 @@
 package org.springframework.social.dropbox.api.impl;
 
-import java.io.IOException;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.social.dropbox.api.DropboxProfile;
 import org.springframework.social.dropbox.api.UserOperations;
 import org.springframework.web.client.RestTemplate;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UserTemplate extends AbstractDropboxOperations implements UserOperations{
 	private final RestTemplate restTemplate;
