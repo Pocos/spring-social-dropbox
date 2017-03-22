@@ -1,5 +1,7 @@
 package org.springframework.social.dropbox.connect;
 
+import org.springframework.social.oauth2.GrantType;
+import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.social.oauth2.OAuth2Template;
 /**
  * 
@@ -18,6 +20,38 @@ public class DropboxOAuth2Template extends OAuth2Template{
 	public DropboxOAuth2Template(String clientId, String clientSecret) {
 		super(clientId, clientSecret,AUTHORIZE_URL, ACCESS_TOKEN_URL);
 		setUseParametersForClientAuthentication(true);
+	}
+	
+	@Override
+	public String buildAuthorizeUrl(OAuth2Parameters parameters) {
+		if(parameters.containsKey("_csrf")){
+			parameters.remove("_csrf");
+		}
+		return super.buildAuthorizeUrl(parameters);
+	}
+
+	@Override
+	public String buildAuthorizeUrl(GrantType grantType, OAuth2Parameters parameters) {
+		if(parameters.containsKey("_csrf")){
+			parameters.remove("_csrf");
+		}
+		return super.buildAuthorizeUrl(grantType, parameters);
+	}
+
+	@Override
+	public String buildAuthenticateUrl(OAuth2Parameters parameters) {
+		if(parameters.containsKey("_csrf")){
+			parameters.remove("_csrf");
+		}
+		return super.buildAuthenticateUrl(parameters);
+	}
+
+	@Override
+	public String buildAuthenticateUrl(GrantType grantType, OAuth2Parameters parameters) {
+		if(parameters.containsKey("_csrf")){
+			parameters.remove("_csrf");
+		}
+		return super.buildAuthenticateUrl(grantType, parameters);
 	}
 
 }
