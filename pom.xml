@@ -145,7 +145,7 @@
 							<goal>perform</goal>
 						</goals>
 						<configuration>
-							<pomFileName>spring-social-live/pom.xml</pomFileName>
+							<pomFileName>spring-social-dropbox/pom.xml</pomFileName>
 						</configuration>
 					</execution>
 				</executions>
